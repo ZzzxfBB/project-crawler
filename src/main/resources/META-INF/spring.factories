@@ -1,0 +1,2 @@
+org.springframework.context.ApplicationContextInitializer=\
+  com.iskeen.project.crawler.common.config.SpringBeanFactory

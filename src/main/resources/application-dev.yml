@@ -1,0 +1,28 @@
+spring:
+  #  mysql配置
+  datasource:
+    druid:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://8.129.173.198:3306/project_crawler?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 940611
+      # 初始化配置
+      initial-size: 3
+      # 最小连接数
+      min-idle: 3
+      # 最大连接数
+      max-active: 15
+      # 获取连接超时时间
+      max-wait: 10000
+      # 连接有效性检测时间
+      time-between-eviction-runs-millis: 90000
+      # 最大空闲时间
+      min-evictable-idle-time-millis: 1800000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+
+logging:
+  level:
+    com.iskeen.project.crawler.core.dao.mapper: debug
