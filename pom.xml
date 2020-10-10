@@ -120,7 +120,11 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-
+    <!--    quartz-->
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.auth0</groupId>
       <artifactId>java-jwt</artifactId>
@@ -131,6 +135,17 @@
       <artifactId>spring-boot-starter-aop</artifactId>
     </dependency>
 
+    <!--    webmagic-->
+    <dependency>
+      <groupId>us.codecraft</groupId>
+      <artifactId>webmagic-core</artifactId>
+      <version>0.7.3</version>
+    </dependency>
+    <dependency>
+      <groupId>us.codecraft</groupId>
+      <artifactId>webmagic-extension</artifactId>
+      <version>0.7.3</version>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
@@ -138,8 +153,6 @@
     </dependency>
 
   </dependencies>
-
-
 
 
   <build>

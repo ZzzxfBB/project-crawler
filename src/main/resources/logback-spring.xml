@@ -12,7 +12,8 @@
   <!-- 控制台输出日志 appender类型：ConsoleAppender、FileAppender、RollingFileAppender -->
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>${cmpName}#-#${appName}#-#%d{yyyy-MM-dd HH:mm:ss.SSS}#-#[%thread]#-#%-5level#-#%logger{35}#-#%X{sessionId}%msg%n
+      <pattern>${cmpName}#-#${appName}#-#%d{yyyy-MM-dd
+        HH:mm:ss.SSS}#-#[%thread]#-#%-5level#-#%logger{35}#-#%X{sessionId}%msg%n
       </pattern>
     </encoder>
   </appender>
