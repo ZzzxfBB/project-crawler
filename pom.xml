@@ -13,12 +13,12 @@
   <artifactId>project-crawler</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>project-crawler</name>
-  <description>太空邮局</description>
+  <description>proj爬虫</description>
 
   <properties>
     <java.version>1.8</java.version>
-    <docker.image.tag>0.0.1</docker.image.tag>
-
+    <docker.image.tag>0.0.2</docker.image.tag>
+    <redisson.version>3.11.6</redisson.version>
     <protobuf.version>3.11.0</protobuf.version>
     <mybatis-plus.version>3.4.0</mybatis-plus.version>
     <hutool.version>5.3.9</hutool.version>
@@ -134,12 +134,23 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-aop</artifactId>
     </dependency>
-
+    <!--      redisson-->
+    <dependency>
+      <groupId>org.redisson</groupId>
+      <artifactId>redisson-spring-boot-starter</artifactId>
+      <version>${redisson.version}</version>
+    </dependency>
     <!--    webmagic-->
     <dependency>
       <groupId>us.codecraft</groupId>
       <artifactId>webmagic-core</artifactId>
       <version>0.7.3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>us.codecraft</groupId>
@@ -161,6 +172,44 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>jib-maven-plugin</artifactId>
+        <version>1.8.0</version>
+        <configuration>
+          <from>
+            <image>registry.cn-chengdu.aliyuncs.com/iskeen/openjdk:8</image>
+          </from>
+          <to>
+            <image>registry.cn-hangzhou.aliyuncs.com/my-private-proj/${project.artifactId}</image>
+            <tags>
+              <tag>${docker.image.tag}</tag>
+            </tags>
+          </to>
+          <container>
+            <ports>
+              <port>9527</port>
+            </ports>
+            <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+            <args>
+              <arg>--spring.profiles.active=prod</arg>
+            </args>
+            <jvmFlags>
+              <jvmFlag>-Xms128m</jvmFlag>
+              <jvmFlag>-Xmx128m</jvmFlag>
+              <!--              <jvmFlag>-Duser.timezone=Asia/Shanghai</jvmFlag>  -->
+            </jvmFlags>
+          </container>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>build</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

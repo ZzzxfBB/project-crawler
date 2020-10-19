@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iskeen.project.crawler.core.mapper.XsoftMapper">
+  <resultMap id="BaseResultMap" type="com.iskeen.project.crawler.core.domain.Xsoft">
+    <!--@mbg.generated-->
+    <!--@Table pc_xsoft-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="dev_type" jdbcType="VARCHAR" property="devType" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="budget" jdbcType="VARCHAR" property="budget" />
+    <result column="dev_period" jdbcType="VARCHAR" property="devPeriod" />
+    <result column="dev_area" jdbcType="VARCHAR" property="devArea" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="attachment" jdbcType="LONGVARCHAR" property="attachment" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, dev_type, title, publish_time, budget, dev_period, dev_area, `desc`, attachment, 
+    `status`, create_time
+  </sql>
+</mapper>

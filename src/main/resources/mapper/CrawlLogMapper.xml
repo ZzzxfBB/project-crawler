@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iskeen.project.crawler.core.mapper.CrawlLogMapper">
+  <resultMap id="BaseResultMap" type="com.iskeen.project.crawler.core.domain.CrawlLog">
+    <!--@mbg.generated-->
+    <!--@Table pc_crawl_log-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="processor" jdbcType="VARCHAR" property="processor" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="bytes" jdbcType="INTEGER" property="bytes" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="velocity" jdbcType="INTEGER" property="velocity" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, processor, url, bytes, `status`, create_time, velocity
+  </sql>
+</mapper>
